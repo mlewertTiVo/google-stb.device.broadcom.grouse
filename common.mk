@@ -5,6 +5,12 @@ export NEXUS_PLATFORM            := 97260
 export BCHP_VER                  := B0
 export PLATFORM                  := 97260
 
+# binary distribution
+export BCM_DIST_FORCED_BINDIST   := y
+export BCM_BINDIST_BL_ROOT       := vendor/broadcom/prebuilts/bootloaders/grouse
+export BCM_BINDIST_LIBS_ROOT     := vendor/broadcom/prebuilts/nximg/4.9/grouse
+export BCM_BINDIST_KNL_ROOT      := device/broadcom/grouse-kernel/4.9
+
 # compile the rc's for the device.
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.ft.mmu.nx.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.nx.rc
 LOCAL_DEVICE_RCS                 += device/broadcom/common/rcs/init.fs.verity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.fs.rc   # verity
