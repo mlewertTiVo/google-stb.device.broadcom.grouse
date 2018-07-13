@@ -50,6 +50,3 @@ export BOLT_IMG_SWAP_BFW            := device/broadcom/grouse/blb/zb/bfw-4.4.2-z
 export HW_HVD_REVISION           := U
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
-
-# enable once the sage ta load problem is solved.
-export ANDROID_SUPPORTS_RPMB     := n
