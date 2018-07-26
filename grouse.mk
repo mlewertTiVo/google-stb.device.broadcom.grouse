@@ -5,7 +5,7 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/grouse/fstab/fstab.verity.ab
 LOCAL_DEVICE_FSTAB               += device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.grouse
 export LOCAL_DEVICE_FSTAB
 
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.f2fs.conf
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.grouse.rc
