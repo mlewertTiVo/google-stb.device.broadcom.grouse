@@ -68,8 +68,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
    \
    ro.nx.eth.irq_mode_mask=3:2 \
    \
-   ro.com.google.clientidbase=android-grouse-tv
-   ro.nrdp.modelgroup=GROUSE
+   ro.com.google.clientidbase=android-grouse-tv \
+   ro.nrdp.modelgroup=GROUSE \
    ro.nrdp.validation=ninja_5.1
 
 TARGET_BOOTLOADER_BOARD_NAME  := grouse
