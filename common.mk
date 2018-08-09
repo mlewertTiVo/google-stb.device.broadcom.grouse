@@ -42,7 +42,7 @@ export LOCAL_DEVICE_SYSTEM_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.
 export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/vendor
 
 # bootloader firmware manipulation.
-export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
+export LOCAL_DEVICE_SAGE_DEV_N_PROD ?= y
 export BOLT_IMG_SWAP_BBL            := device/broadcom/grouse/blb/zb/bbl-3.2.0-zb.bin
 export BOLT_IMG_SWAP_BFW            := device/broadcom/grouse/blb/zb/bfw-4.4.2-zb.bin
 
