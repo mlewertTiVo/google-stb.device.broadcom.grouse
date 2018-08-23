@@ -42,7 +42,7 @@ export LOCAL_DEVICE_SYSTEM_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.
 export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/vendor
 
 # bootloader firmware manipulation.
-export LOCAL_DEVICE_SAGE_DEV_N_PROD := y
+export LOCAL_DEVICE_SAGE_DEV_N_PROD ?= y
 export BOLT_IMG_SWAP_BBL            := device/broadcom/grouse/blb/zb/bbl-3.2.0-zb.bin
 export BOLT_IMG_SWAP_BFW            := device/broadcom/grouse/blb/zb/bfw-4.4.2-zb.bin
 
@@ -50,6 +50,3 @@ export BOLT_IMG_SWAP_BFW            := device/broadcom/grouse/blb/zb/bfw-4.4.2-z
 export HW_HVD_REVISION           := U
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
-
-# enable once the sage ta load problem is solved.
-export ANDROID_SUPPORTS_RPMB     := n

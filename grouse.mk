@@ -5,7 +5,7 @@ LOCAL_DEVICE_FSTAB               := device/broadcom/grouse/fstab/fstab.verity.ab
 LOCAL_DEVICE_FSTAB               += device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.grouse
 export LOCAL_DEVICE_FSTAB
 
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.conf
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.f2fs.conf
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.grouse.rc
@@ -68,8 +68,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
    \
    ro.nx.eth.irq_mode_mask=3:2 \
    \
-   ro.com.google.clientidbase=android-grouse-tv
-   ro.nrdp.modelgroup=GROUSE
+   ro.com.google.clientidbase=android-grouse-tv \
+   ro.nrdp.modelgroup=GROUSE \
    ro.nrdp.validation=ninja_5.1
 
 TARGET_BOOTLOADER_BOARD_NAME  := grouse
