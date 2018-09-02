@@ -1,11 +1,16 @@
-export LOCAL_PRODUCT_OUT       := grouse
+export LOCAL_PRODUCT_OUT         := grouse
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 LOCAL_DEVICE_FSTAB               := device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 LOCAL_DEVICE_FSTAB               += device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.grouse
 export LOCAL_DEVICE_FSTAB
 
+ifeq ($(LOCAL_DTBO_SUPPORT),y)
+export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.p.conf
+export LOCAL_DEVICE_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --header_version 1
+else
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.f2fs.conf
+endif
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.grouse.rc
@@ -14,6 +19,8 @@ LOCAL_DEVICE_RCS                 += device/broadcom/grouse/rcs/init.block.rc:$(T
 
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.grouse.rc
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/grouse/rcs/init.block.rc:root/init.recovery.block.rc # block devices
+
+LOCAL_DTBO_SUPPORT               := y
 
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2000m@0m mem=40m@2008m
@@ -38,8 +45,11 @@ include device/broadcom/grouse/common.mk
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
-#$(call inherit-product, build/make/target/product/product_launched_with_o_mr1.mk)
-PRODUCT_SHIPPING_API_LEVEL       := 27
+ifeq ($(LOCAL_DTBO_SUPPORT),y)
+$(call inherit-product, build/make/target/product/product_launched_with_p.mk)
+else
+$(call inherit-product, build/make/target/product/product_launched_with_o_mr1.mk)
+endif
 PRODUCT_NAME                     := grouse
 PRODUCT_MODEL                    := grouse
 PRODUCT_BRAND                    := google
