@@ -20,8 +20,6 @@ LOCAL_DEVICE_RCS                 += device/broadcom/grouse/rcs/init.block.rc:$(T
 LOCAL_DEVICE_RECOVERY_RCS        := device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.grouse.rc
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/grouse/rcs/init.block.rc:root/init.recovery.block.rc # block devices
 
-LOCAL_DTBO_SUPPORT               := y
-
 # kernel command line.
 LOCAL_DEVICE_KERNEL_CMDLINE      := mem=2000m@0m mem=40m@2008m
 LOCAL_DEVICE_KERNEL_CMDLINE      += bmem=532m@414m
