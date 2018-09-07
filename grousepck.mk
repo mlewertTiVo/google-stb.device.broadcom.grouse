@@ -1,16 +1,11 @@
-export LOCAL_PRODUCT_OUT         := grouse
+export LOCAL_PRODUCT_OUT       := grouse
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
-LOCAL_DEVICE_FSTAB               := device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
-LOCAL_DEVICE_FSTAB               += device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.grouse
+LOCAL_DEVICE_FSTAB               := device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3.nosd:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
+LOCAL_DEVICE_FSTAB               += device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3.nosd:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.grouse
 export LOCAL_DEVICE_FSTAB
 
-ifeq ($(LOCAL_DTBO_SUPPORT),y)
-export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.p.conf
-export LOCAL_DEVICE_MKBOOTIMG_ARGS := --ramdisk_offset 0x02200000 --header_version 1
-else
 export LOCAL_DEVICE_GPT          := device/broadcom/common/gpts/ab-u.o.f2fs.conf
-endif
 export LOCAL_DEVICE_GPT_O_LAYOUT := y
 
 LOCAL_DEVICE_RCS                 := device/broadcom/common/rcs/init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.grouse.rc
@@ -38,21 +33,18 @@ export HW_AB_UPDATE_SUPPORT      := y
 export LOCAL_DEVICE_OVERLAY      := device/broadcom/grouse/overlay
 export ANDROID_DEVICE_SUPPORTS_BP3 := y
 
-export LOCAL_DEVICE_AON_GPIO     := device/broadcom/grouse/rcs/aon_gpio.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
-export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/grouse/bluetooth/vnd_grouse.usb.txt
-export ANDROID_ENABLE_BT         := usb
+export LOCAL_DEVICE_AON_GPIO     := device/broadcom/grouse/rcs/aon_gpio.pck.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
+export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/grouse/bluetooth/vnd_grouse.uart.txt
+export ANDROID_ENABLE_BT         := n # Disabled for now
 
 # common to all grouse devices.
 include device/broadcom/grouse/common.mk
 
 # baseline the common support.
 $(call inherit-product, device/broadcom/common/bcm.mk)
-ifeq ($(LOCAL_DTBO_SUPPORT),y)
-$(call inherit-product, build/make/target/product/product_launched_with_p.mk)
-else
-$(call inherit-product, build/make/target/product/product_launched_with_o_mr1.mk)
-endif
-PRODUCT_NAME                     := grouse
+#$(call inherit-product, build/make/target/product/product_launched_with_o_mr1.mk)
+PRODUCT_SHIPPING_API_LEVEL       := 27
+PRODUCT_NAME                     := grousepck
 PRODUCT_MODEL                    := grouse
 PRODUCT_BRAND                    := google
 PRODUCT_DEVICE                   := grouse
