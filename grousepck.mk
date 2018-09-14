@@ -1,4 +1,6 @@
+ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT       := grouse
+endif
 export LOCAL_DEVICE_FULL_TREBLE  := y
 
 LOCAL_DEVICE_FSTAB               := device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3.nosd:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
