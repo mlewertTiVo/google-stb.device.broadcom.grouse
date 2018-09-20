@@ -28,15 +28,12 @@ LOCAL_DEVICE_SEPOLICY_BLOCK      := device/broadcom/grouse/sepolicy/block
 LOCAL_DEVICE_SEPOLICY_BLOCK      += device/broadcom/grouse/sepolicy/treble
 export LOCAL_DEVICE_SEPOLICY_BLOCK
 export LOCAL_DEVICE_KEY_POLL     := device/broadcom/common/keylayout/gpio_keys_polled.kl:system/usr/keylayout/gpio_keys_polled.kl
-export LOCAL_DEVICE_USERDATA     := 4294967296  # 4GB.
 export LOCAL_DEVICE_USERDATA_FS  := f2fs
 export HW_ENCODER_SUPPORT        := n
 export BT_RFKILL_SUPPORT         := y
 export V3D_VARIANT               := vc5
 export LOCAL_DEVICE_REFERENCE_BUILD := device/broadcom/grouse/reference_build.mk
 export LOCAL_DEVICE_USE_VERITY   := y
-export LOCAL_DEVICE_SYSTEM_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/system
-export LOCAL_DEVICE_VENDOR_VERITY_PARTITION := /dev/block/platform/rdb/f0200200.sdhci/by-name/vendor
 
 # bootloader firmware manipulation.
 export LOCAL_DEVICE_SAGE_DEV_N_PROD ?= y
