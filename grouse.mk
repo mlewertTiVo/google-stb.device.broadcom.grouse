@@ -64,7 +64,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    ro.hardware=grouse \
    \
    ro.opengles.version=196609 \
-   debug.hwui.render_dirty_regions=false \
    ro.v3d.disable_buffer_age=true \
    ro.nx.mma=1 \
    \
