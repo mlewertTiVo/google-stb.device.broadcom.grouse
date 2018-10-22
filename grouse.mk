@@ -2,6 +2,9 @@ ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT         := grouse
 endif
 
+export LOCAL_DTBO_SUPPORT      := y
+export LOCAL_DEVICE_DTBO_IMAGE := grouse/dtbo.img
+
 LOCAL_DEVICE_FSTAB               ?= device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
 LOCAL_DEVICE_FSTAB               += device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.grouse
 export LOCAL_DEVICE_FSTAB
