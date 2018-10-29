@@ -36,7 +36,7 @@ export ANDROID_DEVICE_SUPPORTS_BP3 := y
 
 export LOCAL_DEVICE_AON_GPIO     := device/broadcom/grouse/rcs/aon_gpio.pck.cfg:$(TARGET_COPY_OUT_VENDOR)/power/aon_gpio.cfg
 export LOCAL_DEVICE_BT_CONFIG    := device/broadcom/grouse/bluetooth/vnd_grouse.uart.txt
-export ANDROID_ENABLE_BT         := n # Disabled for now
+export ANDROID_ENABLE_BT         := uart
 
 # common to all grouse devices.
 include device/broadcom/grouse/common.mk
