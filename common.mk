@@ -44,3 +44,7 @@ export BOLT_IMG_SWAP_BFW            := device/broadcom/grouse/blb/zb/bfw-4.4.2-z
 export HW_HVD_REVISION           := U
 # v3d mmu available.
 export HW_GPU_MMU_SUPPORT        := y
+
+ifeq ($(HW_HVD_REDUX),y)
+export LOCAL_DEVICE_RTS_MODE     := 4
+endif

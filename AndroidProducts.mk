@@ -1,2 +1,3 @@
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/grouse.mk
 PRODUCT_MAKEFILES += $(LOCAL_DIR)/grousepck.mk
+PRODUCT_MAKEFILES += $(LOCAL_DIR)/grouse_dd.mk
