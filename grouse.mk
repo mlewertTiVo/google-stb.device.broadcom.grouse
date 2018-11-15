@@ -2,6 +2,7 @@ ifndef LOCAL_PRODUCT_OUT
 export LOCAL_PRODUCT_OUT         := grouse
 endif
 
+export LOCAL_CFG_PROFILE       ?= default
 export LOCAL_DTBO_SUPPORT      := y
 ifneq ($(wildcard device/broadcom/grouse-kernel),)
 export LOCAL_DEVICE_DTBO_IMAGE := grouse-kernel/4.9/dtbo.img
@@ -27,19 +28,6 @@ LOCAL_DEVICE_RCS                 += device/broadcom/grouse/rcs/init.block.rc:$(T
 
 LOCAL_DEVICE_RECOVERY_RCS        ?= device/broadcom/common/rcs/init.recovery.rc:root/init.recovery.grouse.rc
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/grouse/rcs/init.block.rc:root/init.recovery.block.rc # block devices
-
-# kernel command line.
-KERNEL_CMDLINE      := mem=2000m@0m mem=40m@2008m
-ifeq ($(HW_HVD_REDUX),y)
-KERNEL_CMDLINE      += bmem=640m@410m
-KERNEL_CMDLINE      += brcm_cma=512m@1050m
-else
-KERNEL_CMDLINE      += bmem=532m@414m
-KERNEL_CMDLINE      += brcm_cma=574m@948m
-endif
-KERNEL_CMDLINE      += ramoops.mem_address=0x7D000000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
-KERNEL_CMDLINE      += rootwait init=/init ro
-export LOCAL_DEVICE_KERNEL_CMDLINE ?= ${KERNEL_CMDLINE}
 
 # compile the media codecs for the device.
 ifeq ($(HW_HVD_REDUX),y)
@@ -97,13 +85,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    \
    ro.com.google.clientidbase=android-grouse-tv
 
-ifeq ($(HW_HVD_REDUX),y)
-PRODUCT_PROPERTY_OVERRIDES += \
-   ro.nx.heap.main=96m \
-   ro.nx.trim.pip=0
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-   ro.nx.heap.main=96m
-endif
+# last but not least, include device flavor profile.
+include device/broadcom/grouse/profiles/${LOCAL_CFG_PROFILE}.mk
 
 TARGET_BOOTLOADER_BOARD_NAME  ?= grouse
