@@ -5,9 +5,9 @@ endif
 export LOCAL_CFG_PROFILE       ?= default
 export LOCAL_DTBO_SUPPORT      := y
 ifneq ($(wildcard device/broadcom/grouse-kernel),)
-export LOCAL_DEVICE_DTBO_IMAGE := grouse-kernel/4.9/dtbo.img
+export LOCAL_DEVICE_DTBO_IMAGE ?= grouse-kernel/4.9/dtbo.img
 else
-export LOCAL_DEVICE_DTBO_IMAGE := grouse/dtbo.img
+export LOCAL_DEVICE_DTBO_IMAGE ?= grouse/dtbo.img
 endif
 
 LOCAL_DEVICE_FSTAB               ?= device/broadcom/grouse/fstab/fstab.verity.ab-update.early.bp3:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.bcm
