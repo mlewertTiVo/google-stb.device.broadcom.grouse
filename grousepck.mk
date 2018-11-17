@@ -72,6 +72,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
    \
    ro.nx.eth.irq_mode_mask=3:2 \
    \
-   ro.com.google.clientidbase=android-grouse-tv
+   ro.com.google.clientidbase=android-broadcom-tv
 
 TARGET_BOOTLOADER_BOARD_NAME  := grouse

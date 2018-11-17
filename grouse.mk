@@ -83,7 +83,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
    \
    ro.nx.eth.irq_mode_mask=3:2 \
    \
-   ro.com.google.clientidbase=android-grouse-tv
+   ro.com.google.clientidbase=android-broadcom-tv
 
 # last but not least, include device flavor profile.
 include device/broadcom/grouse/profiles/${LOCAL_CFG_PROFILE}.mk
