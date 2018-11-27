@@ -4,6 +4,7 @@ export LOCAL_ARM_AARCH64_NOT_ABI_COMPATIBLE := y
 export NEXUS_PLATFORM            := 97260
 export BCHP_VER                  := B0
 export PLATFORM                  := 97260
+export BOLT_BOARD_VB             := BCM972604BUSFF
 
 # binary distribution
 export BCM_DIST_FORCED_BINDIST   := y
