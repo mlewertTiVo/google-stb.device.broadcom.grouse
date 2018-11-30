@@ -20,7 +20,7 @@ export LOCAL_DEVICE_RCS
 LOCAL_DEVICE_RECOVERY_RCS        += device/broadcom/grouse/rcs/init.recovery.usb.rc:root/init.recovery.usb.rc # uses 'configfs'
 export LOCAL_DEVICE_RECOVERY_RCS
 
-LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-update/recovery.fstab
+LOCAL_DEVICE_RECOVERY_FSTAB      := device/broadcom/common/recovery/fstab.ab-u.f2fs-data/recovery.fstab
 export LOCAL_DEVICE_RECOVERY_FSTAB
 
 # optional device override/addition.
