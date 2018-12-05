@@ -9,3 +9,6 @@ add_lunch_combo grouse_dd-user
 
 add_lunch_combo grouse_ms12d-userdebug
 add_lunch_combo grouse_ms12d-user
+
+add_lunch_combo grouse_dd_ms12d-userdebug
+add_lunch_combo grouse_dd_ms12d-user
