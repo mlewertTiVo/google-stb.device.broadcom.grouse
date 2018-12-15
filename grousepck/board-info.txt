@@ -1,3 +1,4 @@
 require board=grouse
+require version-bootloader=v1.43-265-gaf1bdd7b
 
 
