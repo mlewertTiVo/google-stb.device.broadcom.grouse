@@ -54,18 +54,6 @@
             </Type>
         </MediaCodec>
 
-        <!-- Broadcom VP9 decoder is not available on all platforms -->
-        <MediaCodec name="OMX.broadcom.video_decoder.vp9" update="true">
-            <Type name="video/x-vnd.on2.vp9" update="true">
-                <Limit name="measured-frame-rate-320x180" range="125-126" />
-                <Limit name="measured-frame-rate-640x360" range="128-130" />
-                <Limit name="measured-frame-rate-1280x720" range="142-144" />
-                <Limit name="measured-frame-rate-1920x1080" range="140-142" />
-                <Limit name="measured-frame-rate-3840x2160" range="55-56" />
-            </Type>
-        </MediaCodec>
-
-        <!-- Broadcom Video Decoder (Secondary with reduced caps, no Android Tunnel) -->
         <MediaCodec name="OMX.broadcom.video_decoder.redux" update="true">
             <Type name="video/avc" update="true">
                 <Limit name="measured-frame-rate-320x240" range="262-262" />
@@ -83,7 +71,16 @@
             </Type>
         </MediaCodec>
 
-        <!-- Broadcom VP9 (Secondary with reduced caps, no Android Tunnel) decoder -->
+        <MediaCodec name="OMX.broadcom.video_decoder.vp9" update="true">
+            <Type name="video/x-vnd.on2.vp9" update="true">
+                <Limit name="measured-frame-rate-320x180" range="125-126" />
+                <Limit name="measured-frame-rate-640x360" range="128-130" />
+                <Limit name="measured-frame-rate-1280x720" range="142-144" />
+                <Limit name="measured-frame-rate-1920x1080" range="140-142" />
+                <Limit name="measured-frame-rate-3840x2160" range="55-56" />
+            </Type>
+        </MediaCodec>
+
         <MediaCodec name="OMX.broadcom.video_decoder.redux.vp9" update="true">
             <Type name="video/x-vnd.on2.vp9" update="true">
                 <Limit name="measured-frame-rate-320x180" range="218-218" />
