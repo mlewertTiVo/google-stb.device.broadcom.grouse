@@ -1,8 +1,8 @@
 # kernel command line.
-KERNEL_CMDLINE      := mem=2000m@0m mem=40m@2008m
-KERNEL_CMDLINE      += bmem=548m@414m
-KERNEL_CMDLINE      += brcm_cma=574m@962m
-KERNEL_CMDLINE      += ramoops.mem_address=0x7D000000 ramoops.mem_size=0x800000 ramoops.console_size=0x400000
+KERNEL_CMDLINE      := mem=1476m@0m mem=564m@1484m
+KERNEL_CMDLINE      += bmem=521m@1502m
+KERNEL_CMDLINE      += brcm_cma=576m@900m
+KERNEL_CMDLINE      += ramoops.mem_address=0x5C400000 ramoops.mem_size=0x100000 ramoops.console_size=0x100000
 KERNEL_CMDLINE      += rootwait init=/init ro
 export LOCAL_DEVICE_KERNEL_CMDLINE ?= ${KERNEL_CMDLINE}
 
